@@ -175,3 +175,17 @@ Original project code and documentation are available under the [MIT License](LI
 [Open Gapwise →](https://gapwise.ca)
 
 </div>
+
+### Local validation
+
+Use Java 17 or newer, the Android SDK configured for this project, and Gradle 9.6.0
+(the version in `gradle/wrapper/gradle-wrapper.properties` and CI):
+
+```bash
+gradle :app:compileDebugKotlin :app:testDebugUnitTest :app:lintDebug
+```
+
+The repository currently contains wrapper properties but no wrapper executable/JAR, so
+install that Gradle version explicitly. The optional encrypted-sync adapter must send the
+key broker's first-party `Origin` as well as the user's bearer token; the broker's web origin
+guard remains enforced. Device/Keystore/OAuth behavior still needs emulator or device validation.

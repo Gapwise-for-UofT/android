@@ -2,7 +2,7 @@ name: Android parity build
 
 on:
   push:
-    branches: [web-mobile-ui-parity]
+    branches: [main, web-mobile-ui-parity]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -22,12 +22,12 @@ jobs:
           java-version: '17'
       - uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: current
-      - name: Compile Android app
+          gradle-version: '9.6.0'
+      - name: Compile and validate Android app
         shell: bash
         run: |
           set -o pipefail
-          gradle :app:compileDebugKotlin --stacktrace 2>&1 | tee build.log
+          gradle :app:compileDebugKotlin :app:testDebugUnitTest :app:lintDebug --stacktrace 2>&1 | tee build.log
       - name: Report build diagnostics
         if: ${{ failure() && github.event_name == 'pull_request' }}
         env:
