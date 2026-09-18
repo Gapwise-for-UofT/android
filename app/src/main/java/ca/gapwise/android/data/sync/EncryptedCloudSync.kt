@@ -460,6 +460,11 @@ class EncryptedCloudSync(private val accounts: GapwiseAccountManager) {
             readTimeout = 15_000
             setRequestProperty("Accept", "application/json")
             setRequestProperty("Authorization", "Bearer $accessToken")
+            // The first-party broker enforces the same explicit origin contract as the web client.
+            if (url == GapwiseCloudConfig.KEY_BROKER_URL) {
+                val endpoint = URL(url)
+                setRequestProperty("Origin", "${endpoint.protocol}://${endpoint.authority}")
+            }
             if (includeApiKey) setRequestProperty("apikey", GapwiseCloudConfig.SUPABASE_PUBLISHABLE_KEY)
             if (preferRepresentation) setRequestProperty("Prefer", "return=representation")
             if (body != null) {
