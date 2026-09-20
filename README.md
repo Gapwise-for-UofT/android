@@ -6,7 +6,7 @@
 
 ### The native Android client for Gapwise.
 
-**A privacy-first Kotlin + Jetpack Compose app for University of Toronto timetables, with secure on-device persistence, optional encrypted account sync, and a UTM-focused native map.**
+**A privacy-first Kotlin + Jetpack Compose app for University of Toronto timetables, with secure on-device persistence, optional encrypted account sync, and native campus tools.**
 
 [![Android](https://img.shields.io/badge/Android-Native-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.x-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
@@ -27,7 +27,7 @@
 
 Gapwise for Android is the native Android client for **[Gapwise](https://gapwise.ca)**, a timetable-intelligence platform for University of Toronto students.
 
-The timetable layer supports **UTM, UTSG, UTSC, and mixed-campus schedules**. Campus identity and the original ACORN location string are preserved instead of being collapsed into one campus namespace. The first-party native map remains **UTM-focused** until equally grounded campus data exists elsewhere.
+The timetable layer supports **UTM, UTSG, UTSC, and mixed-campus schedules**. Campus identity and the original ACORN location string are preserved instead of being collapsed into one campus namespace. The current Android MapLibre implementation renders UTM buildings and routes only; UTSG and UTSC timetable locations remain intact but are not plotted on that map.
 
 This is a real native Android application rather than a WebView wrapper. Android owns navigation, storage, lifecycle behavior, platform authentication hand-off, theming, and map rendering while the wider Gapwise ecosystem remains the source of truth for shared product semantics.
 
@@ -151,8 +151,8 @@ The project targets modern Android SDKs and should be tested on both emulators a
 | **[`gapwise`](https://github.com/Gapwise-for-UofT/gapwise)** | Core web/PWA, canonical timetable/gap/routing semantics, public API, OpenAPI, and SDK source | [gapwise.ca](https://gapwise.ca) / [api.gapwise.ca](https://api.gapwise.ca/v1) |
 | **[`android`](https://github.com/Gapwise-for-UofT/android)** | Native Kotlin + Jetpack Compose Android client | Android app |
 | **[`ios`](https://github.com/Gapwise-for-UofT/ios)** | Native Swift + SwiftUI iOS client | iOS app |
-| **[`ai`](https://github.com/Gapwise-for-UofT/ai)** | OAuth/MCP layer for public UTM intelligence and explicitly delegated student context | [ai.gapwise.ca](https://ai.gapwise.ca) |
-| **[`data`](https://github.com/Gapwise-for-UofT/data)** | Canonical public UTM campus data, provenance, schemas, validation, and distribution | [data.gapwise.ca](https://data.gapwise.ca) |
+| **[`ai`](https://github.com/Gapwise-for-UofT/ai)** | OAuth/MCP layer for explicitly delegated student context and bounded actions | [ai.gapwise.ca](https://ai.gapwise.ca) |
+| **[`data`](https://github.com/Gapwise-for-UofT/data)** | Canonical public University of Toronto campus data, provenance, schemas, validation, and distribution | [data.gapwise.ca](https://data.gapwise.ca) |
 | **[`docs`](https://github.com/Gapwise-for-UofT/docs)** | Canonical public developer documentation | [docs.gapwise.ca](https://docs.gapwise.ca) |
 | **[`status`](https://github.com/Gapwise-for-UofT/status)** | Independent service-health monitoring and incident communication | [status.gapwise.ca](https://status.gapwise.ca) |
 
