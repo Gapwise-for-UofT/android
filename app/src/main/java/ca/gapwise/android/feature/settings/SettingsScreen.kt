@@ -577,7 +577,7 @@ fun SettingsScreen(
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
             Text(
-                "Timetables support UTM, St. George, Scarborough, and mixed-campus schedules. Campus mapping remains UTM-focused.",
+                "Timetables support UTM, St. George, Scarborough, and mixed-campus schedules. This Android version currently maps UTM buildings and routes only.",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
