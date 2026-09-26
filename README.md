@@ -6,7 +6,7 @@
 
 ### The native Android client for Gapwise.
 
-**A privacy-first Kotlin + Jetpack Compose app for University of Toronto timetables, with secure on-device persistence, optional encrypted account sync, and native campus tools.**
+**A privacy-first Kotlin + Jetpack Compose app for Gapwise, currently focused on University of Toronto timetables, with secure on-device persistence, optional encrypted account sync, and native campus tools.**
 
 [![Android](https://img.shields.io/badge/Android-Native-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.x-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
@@ -25,9 +25,9 @@
 
 ## What Gapwise for Android is
 
-Gapwise for Android is the native Android client for **[Gapwise](https://gapwise.ca)**, a timetable-intelligence platform for University of Toronto students.
+Gapwise for Android is the native Android client for **[Gapwise](https://gapwise.ca)**, a free and open-source multi-university timetable and campus-intelligence platform.
 
-The timetable layer supports **UTM, UTSG, UTSC, and mixed-campus schedules**. Campus identity and the original ACORN location string are preserved instead of being collapsed into one campus namespace. The current Android MapLibre implementation renders UTM buildings and routes only; UTSG and UTSC timetable locations remain intact but are not plotted on that map.
+While the Gapwise web platform supports 7 universities across Canada (U of T, Carleton, TMU, Queen's, Laurier, York, and McMaster), the current native Android client implementation focuses on the **University of Toronto** (UTM, UTSG, UTSC, and mixed-campus schedules), with broader multi-university native client expansion planned.
 
 This is a real native Android application rather than a WebView wrapper. Android owns navigation, storage, lifecycle behavior, platform authentication hand-off, theming, and map rendering while the wider Gapwise ecosystem remains the source of truth for shared product semantics.
 
